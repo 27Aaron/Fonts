@@ -6,6 +6,8 @@
   outputs =
     { nixpkgs, ... }:
     let
+      inherit (nixpkgs) lib;
+
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -22,26 +24,39 @@
       packagesFor =
         pkgs:
         let
-          dank-mono = pkgs.callPackage ./nix/dank-mono.nix { };
-          monolisa = pkgs.callPackage ./nix/monolisa.nix { };
-          pingfang = pkgs.callPackage ./nix/pingfang.nix { };
-          zpix = pkgs.callPackage ./nix/zpix.nix { };
-        in
-        {
-          inherit dank-mono monolisa pingfang zpix;
+          packageEntries = lib.filterAttrs (
+            name: type:
+            !(lib.hasPrefix "_" name)
+            && name != "default.nix"
+            && (
+              (type == "regular" && lib.hasSuffix ".nix" name)
+              || (type == "directory" && builtins.pathExists (./nix + "/${name}/default.nix"))
+            )
+          ) (builtins.readDir ./nix);
 
+          packages = lib.listToAttrs (
+            map (
+              name:
+              let
+                entryType = packageEntries.${name};
+                packageName = if entryType == "directory" then name else lib.removeSuffix ".nix" name;
+              in
+              {
+                name = packageName;
+                value = pkgs.callPackage (./nix + "/${name}") { };
+              }
+            ) (builtins.attrNames packageEntries)
+          );
+        in
+        packages
+        // {
           default = pkgs.buildEnv {
             name = "fonts";
-            paths = [
-              dank-mono
-              monolisa
-              pingfang
-              zpix
-            ];
+            paths = builtins.attrValues packages;
           };
         };
     in
     {
-      packages = nixpkgs.lib.genAttrs systems (system: packagesFor (pkgsFor system));
+      packages = lib.genAttrs systems (system: packagesFor (pkgsFor system));
     };
 }
