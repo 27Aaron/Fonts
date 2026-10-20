@@ -2,8 +2,8 @@
 set -euo pipefail
 
 # Refresh the `hash` of every fetchurl-based font package from its `url`.
-# This is intentionally limited to hashes: version/URL bumps stay manual
-# because the release assets are named by hand.
+# Version/URL bumps are handled by update-font-versions.sh before this runs;
+# this script only verifies that the hash matches the current URL.
 
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 cd "$root"
