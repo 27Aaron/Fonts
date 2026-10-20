@@ -23,16 +23,18 @@
         pkgs:
         let
           dank-mono = pkgs.callPackage ./nix/dank-mono.nix { };
+          monolisa = pkgs.callPackage ./nix/monolisa.nix { };
           pingfang = pkgs.callPackage ./nix/pingfang.nix { };
           zpix = pkgs.callPackage ./nix/zpix.nix { };
         in
         {
-          inherit dank-mono pingfang zpix;
+          inherit dank-mono monolisa pingfang zpix;
 
           default = pkgs.buildEnv {
             name = "fonts";
             paths = [
               dank-mono
+              monolisa
               pingfang
               zpix
             ];
