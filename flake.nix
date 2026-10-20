@@ -6,6 +6,10 @@
   outputs =
     { nixpkgs, ... }:
     let
+      inherit (nixpkgs) lib;
+
+      discoverPackages = import ./lib/discover-packages.nix;
+
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -22,26 +26,24 @@
       packagesFor =
         pkgs:
         let
-          dank-mono = pkgs.callPackage ./nix/dank-mono.nix { };
-          monolisa = pkgs.callPackage ./nix/monolisa.nix { };
-          pingfang = pkgs.callPackage ./nix/pingfang.nix { };
-          zpix = pkgs.callPackage ./nix/zpix.nix { };
+          packages = discoverPackages {
+            inherit pkgs;
+            dir = ./nix;
+          };
         in
-        {
-          inherit dank-mono monolisa pingfang zpix;
-
+        packages
+        // {
           default = pkgs.buildEnv {
             name = "fonts";
-            paths = [
-              dank-mono
-              monolisa
-              pingfang
-              zpix
-            ];
+            paths = builtins.attrValues packages;
           };
         };
     in
     {
-      packages = nixpkgs.lib.genAttrs systems (system: packagesFor (pkgsFor system));
+      packages = lib.genAttrs systems (system: packagesFor (pkgsFor system));
+
+      lib = {
+        inherit discoverPackages;
+      };
     };
 }
