@@ -24,38 +24,22 @@
         let
           dank-mono = pkgs.callPackage ./nix/dank-mono.nix { };
           pingfang = pkgs.callPackage ./nix/pingfang.nix { };
+          zpix = pkgs.callPackage ./nix/zpix.nix { };
         in
         {
-          inherit dank-mono pingfang;
+          inherit dank-mono pingfang zpix;
 
           default = pkgs.buildEnv {
             name = "fonts";
             paths = [
               dank-mono
               pingfang
+              zpix
             ];
           };
         };
-
-      # One nixpkgs instantiation per system, shared by packages and formatter.
-      perSystem =
-        system:
-        let
-          pkgs = pkgsFor system;
-        in
-        {
-          packages = packagesFor pkgs;
-
-          # `nix fmt` with no arguments must format the whole tree, but bare
-          # nixfmt-rs reads stdin instead, so wrap it in treefmt.
-          formatter = pkgs.nixfmt-tree.override { nixfmtPackage = pkgs.nixfmt-rs; };
-        };
-
-      all = nixpkgs.lib.genAttrs systems perSystem;
     in
     {
-      packages = nixpkgs.lib.mapAttrs (_: v: v.packages) all;
-
-      formatter = nixpkgs.lib.mapAttrs (_: v: v.formatter) all;
+      packages = nixpkgs.lib.genAttrs systems (system: packagesFor (pkgsFor system));
     };
 }
