@@ -8,6 +8,8 @@
     let
       inherit (nixpkgs) lib;
 
+      discoverPackages = import ./lib/discover-packages.nix;
+
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -24,29 +26,10 @@
       packagesFor =
         pkgs:
         let
-          packageEntries = lib.filterAttrs (
-            name: type:
-            !(lib.hasPrefix "_" name)
-            && name != "default.nix"
-            && (
-              (type == "regular" && lib.hasSuffix ".nix" name)
-              || (type == "directory" && builtins.pathExists (./nix + "/${name}/default.nix"))
-            )
-          ) (builtins.readDir ./nix);
-
-          packages = lib.listToAttrs (
-            map (
-              name:
-              let
-                entryType = packageEntries.${name};
-                packageName = if entryType == "directory" then name else lib.removeSuffix ".nix" name;
-              in
-              {
-                name = packageName;
-                value = pkgs.callPackage (./nix + "/${name}") { };
-              }
-            ) (builtins.attrNames packageEntries)
-          );
+          packages = discoverPackages {
+            inherit pkgs;
+            dir = ./nix;
+          };
         in
         packages
         // {
@@ -58,5 +41,9 @@
     in
     {
       packages = lib.genAttrs systems (system: packagesFor (pkgsFor system));
+
+      lib = {
+        inherit discoverPackages;
+      };
     };
 }
