@@ -1,0 +1,6 @@
+# macOS metadata
+.DS_Store
+
+# Symlinks created by `nix build`
+/result
+/result-*
