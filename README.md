@@ -1,8 +1,6 @@
-My everyday fonts, packaged as a Nix flake.
-
 ## Fonts
 
-Click a font to see its family names and weights.
+My everyday fonts, packaged as a Nix flake.
 
 <details>
 <summary><strong>dank-mono</strong> — Dank Mono</summary>
