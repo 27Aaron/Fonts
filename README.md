@@ -131,7 +131,7 @@ There is no Bold weight; a bold request falls back to Medium.
 
 - **Version**: 21.0d1e1
 - **Styles**: Ultralight, Thin, Light, Regular, Medium, Semibold
-- **Format**: TrueType Collection (`.ttc`), six regional variants in one file
+- **Format**: TrueType Collection (`.ttc`), 24 faces in one file — four regional families in six weights
 - **Licence**: unfree
 - **Nix**: [`nix/pingfang.nix`](nix/pingfang.nix)
 
