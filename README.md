@@ -133,16 +133,14 @@ There is no Bold weight; a bold request falls back to Medium.
 - **Licence**: unfree
 - **Nix**: [`nix/pingfang.nix`](nix/pingfang.nix)
 
-Regional families: `PingFang SC` (苹方-简), `PingFang TC` (苹方-繁), `PingFang HK` (苹方-港), `PingFang MO` (苹方-澳).
-
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 50 | Light / 细体 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 80 | Regular / 常规体 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 |
+| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 0 | Ultralight |
+| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 40 | Thin |
+| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 50 | Light |
+| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 80 | Regular |
+| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 100 | Medium |
+| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 180 | Semibold |
 
 </details>
 <details>
