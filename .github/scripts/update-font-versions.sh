@@ -3,7 +3,12 @@ set -euo pipefail
 
 # Auto-bump font packages that track a GitHub release.
 #
-# A package is eligible when its `url` points at
+# Package metadata is obtained by *evaluating* the flake instead of scraping
+# the source with sed. That way a package may write its URL either as a
+# literal tag or as `"...v${version}/..."` interpolation; both resolve to the
+# same download URL here.
+#
+# A package is eligible when its evaluated URL points at
 #   https://github.com/<owner>/<repo>/releases/download/<tag>/<asset>
 # and its `version` is tied to that tag, i.e. the tag is either
 # `v<version>` or `<version>`.
@@ -12,11 +17,16 @@ set -euo pipefail
 # assets are versioned by hand, and the repository's latest release tag is
 # not the font's version.
 #
-# Only `version` and `url` are changed here. The hash is refreshed afterwards
-# by update-font-hashes.sh.
+# Only `version`, and `url` when the source carries a literal one, are
+# rewritten. The hash is refreshed afterwards by update-font-hashes.sh.
 
 root=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 cd "$root"
+
+command -v nix >/dev/null || {
+  echo "error: nix is required" >&2
+  exit 1
+}
 
 command -v gh >/dev/null || {
   echo "error: gh is required" >&2
@@ -28,6 +38,8 @@ command -v jq >/dev/null || {
   exit 1
 }
 
+system=${FONT_SYSTEM:-x86_64-linux}
+
 # The repository this workflow runs in, used to skip self-hosted sources.
 repo_slug=${GITHUB_REPOSITORY:-}
 if [[ -z ${repo_slug} ]]; then
@@ -37,6 +49,14 @@ if [[ -z ${repo_slug} ]]; then
   repo_slug=${repo_slug%.git}
 fi
 echo "repository: ${repo_slug:-unknown}"
+
+# Read every discovered package's version and *evaluated* src URL in one go.
+metadata=$(nix eval --json "path:${root}#packages.${system}" --apply '
+  ps: builtins.mapAttrs (n: v: {
+    version = v.version or null;
+    url = v.src.url or null;
+  }) (removeAttrs ps [ "default" ])
+')
 
 is_newer() {
   local current=$1 candidate=$2
@@ -87,8 +107,8 @@ skipped=0
 
 for file in nix/*.nix; do
   label=$(basename "${file}" .nix)
-  version=$(sed -n 's/^[[:space:]]*version = "\([^"]*\)";.*/\1/p' "${file}" | head -n 1)
-  url=$(sed -n 's/^[[:space:]]*url = "\([^"]*\)";.*/\1/p' "${file}" | head -n 1)
+  version=$(jq -r --arg n "${label}" '.[$n].version // empty' <<<"${metadata}")
+  url=$(jq -r --arg n "${label}" '.[$n].url // empty' <<<"${metadata}")
 
   if [[ -z ${version} || -z ${url} ]]; then
     echo "[${label}] skip: no version/url"
@@ -164,6 +184,8 @@ for file in nix/*.nix; do
   echo "[${label}] updating ${version} -> ${latest_version}"
   echo "  url: ${new_url}"
 
+  # The url substitution below only matches sources that store a literal
+  # URL. Interpolated sources pick the new tag up from the version bump.
   OLD_VERSION=${version} NEW_VERSION=${latest_version} \
     OLD_URL=${url} NEW_URL=${new_url} \
     perl -0pi -e '
@@ -171,9 +193,13 @@ for file in nix/*.nix; do
       s/^([ \t]*url = ")\Q$ENV{OLD_URL}\E(";)/$1$ENV{NEW_URL}$2/m;
     ' "${file}"
 
-  if ! grep -Fq "version = \"${latest_version}\";" "${file}" ||
-    ! grep -Fq "url = \"${new_url}\";" "${file}"; then
-    echo "error: failed to rewrite ${file}" >&2
+  # Confirm against Nix itself rather than trusting the text substitution.
+  actual_version=$(nix eval --raw "path:${root}#${label}.version")
+  actual_url=$(nix eval --raw "path:${root}#${label}.src.url")
+  if [[ ${actual_version} != "${latest_version}" || ${actual_url} != "${new_url}" ]]; then
+    echo "error: failed to update ${file}" >&2
+    echo "  version: ${actual_version} (expected ${latest_version})" >&2
+    echo "  url: ${actual_url} (expected ${new_url})" >&2
     exit 1
   fi
 
