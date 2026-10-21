@@ -43,6 +43,9 @@ jobs:
       - name: Refresh release asset hashes
         run: .github/scripts/update-font-hashes.sh
 
+      - name: Sync README versions
+        run: .github/scripts/update-readme-versions.sh
+
       - name: Build all fonts
         run: nix build .#default --no-link
 
@@ -60,6 +63,7 @@ jobs:
           add-paths: |
             flake.lock
             nix
+            README.md
           author: "Aaron's Bot <155336205+3ayonara@users.noreply.github.com>"
           committer: "Aaron's Bot <155336205+3ayonara@users.noreply.github.com>"
           commit-message: |
