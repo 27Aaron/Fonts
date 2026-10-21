@@ -19,7 +19,7 @@ My everyday fonts, packaged as a Nix flake.
 
 </details>
 <details>
-<summary><strong>lxgw-wenkai</strong> — LXGW WenKai (霞鶩文楷)</summary>
+<summary><strong>lxgw-wenkai</strong> — LXGW WenKai (霞鹜文楷)</summary>
 
 - **Version**: 1.530
 - **Styles**: Light, Regular, Medium — in both proportional and Mono
@@ -60,7 +60,7 @@ There is no Bold weight; a bold request falls back to Medium.
 
 </details>
 <details>
-<summary><strong>lxgw-wenkai-tc</strong> — LXGW WenKai TC (霞鶩文楷 TC)</summary>
+<summary><strong>lxgw-wenkai-tc</strong> — LXGW WenKai TC (霞鹜文楷 TC)</summary>
 
 - **Version**: 1.530
 - **Styles**: Light, Regular, Medium — in both proportional and Mono
@@ -125,7 +125,7 @@ There is no Bold weight; a bold request falls back to Medium.
 
 </details>
 <details>
-<summary><strong>pingfang</strong> — PingFang (蘋方)</summary>
+<summary><strong>pingfang</strong> — PingFang (苹方)</summary>
 
 - **Version**: 21.0d1e1
 - **Styles**: Ultralight, Thin, Light, Regular, Medium, Semibold
@@ -133,16 +133,16 @@ There is no Bold weight; a bold request falls back to Medium.
 - **Licence**: unfree
 - **Nix**: [`nix/pingfang.nix`](nix/pingfang.nix)
 
-Regional families: `PingFang SC` (蘋方-簡), `PingFang TC` (蘋方-繁), `PingFang HK` (蘋方-港), `PingFang MO` (蘋方-澳).
+Regional families: `PingFang SC` (苹方-简), `PingFang TC` (苹方-繁), `PingFang HK` (苹方-港), `PingFang MO` (苹方-澳).
 
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 0 | Ultralight / 極細體 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 40 | Thin / 纖細體 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 50 | Light / 細體 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 80 | Regular / 標準體 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 100 | Medium / 中黑體 |
-| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 180 | Semibold / 中粗體 |
+| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 |
+| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 |
+| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 50 | Light / 细体 |
+| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 80 | Regular / 常规体 |
+| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 |
+| `PingFang {SC,TC,HK,MO}` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 |
 
 </details>
 <details>
