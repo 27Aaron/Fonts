@@ -75,6 +75,7 @@ This PR refreshes:
 - `flake.lock` via `nix flake update`
 - versions and URLs for GitHub-release-backed packages in `nix/*.nix`
 - fixed-output hashes for release assets in `nix/*.nix`
+- the `**Version**` lines in `README.md`
 
 ### Changes
 
