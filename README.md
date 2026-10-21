@@ -1,32 +1,4 @@
-# Fonts
-
 My everyday fonts, packaged as a Nix flake.
-
-Each font is a separate package, discovered automatically from [`nix/`](nix), and combined into the `default` environment.
-
-## Usage
-
-```console
-# install everything
-$ nix profile install github:27Aaron/Fonts
-
-# or a single font
-$ nix build github:27Aaron/Fonts#lxgw-wenkai
-```
-
-In a NixOS configuration:
-
-```nix
-{
-  inputs.fonts.url = "github:27Aaron/Fonts";
-
-  # either take everything
-  environment.systemPackages = [ inputs.fonts.packages.${pkgs.system}.default ];
-
-  # or pick individual fonts
-  environment.systemPackages = [ inputs.fonts.packages.${pkgs.system}.lxgw-wenkai ];
-}
-```
 
 ## Fonts
 
@@ -190,31 +162,3 @@ Regional families: `PingFang SC` (蘋方-簡), `PingFang TC` (蘋方-繁), `Ping
 | `Zpix` | en | 100 | Regular |
 
 </details>
-
-## Family names and weights
-
-`fc-query` prints every localised family name of a font, joined with commas, in the order declared by the font's name table:
-
-```console
-$ fc-query --format '%{family}\n%{familylang}\n' result/share/fonts/truetype/LXGWWenKai-Regular.ttf
-LXGW WenKai,霞鶩文楷,霞鹜文楷
-en,zh-tw,zh-cn
-```
-
-These are three names for one family, not three fonts. Any of them resolves via fontconfig, so pick whichever reads best in your configuration; the Latin name is the safest across locales.
-
-Note that `霞鶩文楷` and `霞鹜文楷` differ in a single code point — `鶩` (U+9DA9, traditional) versus `鹜` (U+9E5C, simplified). They are not interchangeable spellings of the same string.
-
-Weight values above are fontconfig's numeric scale, where 80 is Regular, 200 is Bold, and 50 is Light. Fonts without a Bold weight, such as LXGW WenKai, substitute Medium when bold is requested.
-
-## Adding a font
-
-Drop a `nix/<name>.nix` file into the repository; [`lib/discover-packages.nix`](lib/discover-packages.nix) picks it up automatically, so `flake.nix` needs no edit.
-
-The `version` and `hash` fields are refreshed by a scheduled workflow. A URL may interpolate `version`:
-
-```nix
-url = "https://github.com/lxgw/LxgwWenKai/releases/download/v${version}/lxgw-wenkai-v${version}.tar.gz";
-```
-
-This works only when the release tag actually tracks the version. Assets published under an unrelated tag, like this repository's own `v1.0.0` release, keep a literal URL.
