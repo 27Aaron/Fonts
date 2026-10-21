@@ -119,6 +119,24 @@ Upstream publishes no tags or releases, so the package pins the commit that last
 
 </details>
 <details>
+<summary><strong>ndot-57</strong> — Ndot-57</summary>
+
+- **Version**: unstable-2025-04-27
+- **Styles**: Regular — in both a proportional and a caps-only cut
+- **Format**: OpenType (`.otf`), two files
+- **Licence**: unfree — Nothing brand material only; the name table forbids sharing and modification
+- **Homepage**: https://github.com/xeji01/nothingfont
+- **Nix**: [`nix/ndot-57.nix`](nix/ndot-57.nix)
+
+| Family | Language | Weight | Style |
+| --- | --- | --- | --- |
+| `Ndot 57` | en | 80 | Regular |
+| `Ndot57Caps` | en | 80 | Regular |
+
+Same source and the same two cuts as `ndot-55`, packaged the same way. The difference sits in the glyphs: the dots keep their 100-unit size but close up on the vertical axis, on a 100-unit pitch against 150 in Ndot-55, and the x-height drops from 550 to 500 units. That is the "tighter dots" the upstream README describes, and it is why the 57 cut reads as the denser one at small sizes. Coverage is otherwise identical — the same 220 codepoints in the proportional cut, the same Cyrillic block in the caps cut.
+
+</details>
+<details>
 <summary><strong>pingfang</strong> — PingFang (苹方)</summary>
 
 - **Version**: 21.0d1e1
