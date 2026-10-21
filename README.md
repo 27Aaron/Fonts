@@ -101,6 +101,24 @@ There is no Bold weight; a bold request falls back to Medium.
 
 </details>
 <details>
+<summary><strong>ndot-55</strong> — Ndot-55</summary>
+
+- **Version**: unstable-2025-04-27
+- **Styles**: Regular — in both a proportional and a caps-only cut
+- **Format**: OpenType (`.otf`), two files
+- **Licence**: unfree — Nothing brand material only; the name table forbids sharing and modification
+- **Homepage**: https://github.com/xeji01/nothingfont
+- **Nix**: [`nix/ndot-55.nix`](nix/ndot-55.nix)
+
+| Family | Language | Weight | Style |
+| --- | --- | --- | --- |
+| `Ndot 55` | en | 80 | Regular |
+| `Ndot55Caps` | en | 80 | Regular |
+
+Upstream publishes no tags or releases, so the package pins the commit that last touched the files and carries a hand-written `unstable-` version. The two cuts register their family names differently — `Ndot 55` with a space, `Ndot55Caps` without — and the caps cut maps the lowercase codepoints onto uppercase glyphs, so text set in it comes out in capitals. It is also the only cut with Cyrillic coverage (ru, uk, bg, sr, be), which the proportional cut lacks.
+
+</details>
+<details>
 <summary><strong>pingfang</strong> — PingFang (苹方)</summary>
 
 - **Version**: 21.0d1e1
