@@ -33,28 +33,28 @@ Proportional family:
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
 | `LXGW WenKai` | en | 80 | Regular |
-| `霞鶩文楷` | zh-TW | 80 | Regular |
-| `霞鹜文楷` | zh-CN | 80 | Regular |
+| `LXGW WenKai` | zh-TW | 80 | Regular |
+| `LXGW WenKai` | zh-CN | 80 | Regular |
 | `LXGW WenKai Light` | en | 50 | Light |
-| `霞鶩文楷 Light` | zh-TW | 50 | Light |
-| `霞鹜文楷 Light` | zh-CN | 50 | Light |
+| `LXGW WenKai Light` | zh-TW | 50 | Light |
+| `LXGW WenKai Light` | zh-CN | 50 | Light |
 | `LXGW WenKai Medium` | en | 100 | Medium |
-| `霞鶩文楷 Medium` | zh-TW | 100 | Medium |
-| `霞鹜文楷 Medium` | zh-CN | 100 | Medium |
+| `LXGW WenKai Medium` | zh-TW | 100 | Medium |
+| `LXGW WenKai Medium` | zh-CN | 100 | Medium |
 
 Mono family:
 
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
 | `LXGW WenKai Mono` | en | 80 | Regular |
-| `霞鶩文楷等寬` | zh-TW | 80 | Regular |
-| `霞鹜文楷等宽` | zh-CN | 80 | Regular |
+| `LXGW WenKai Mono` | zh-TW | 80 | Regular |
+| `LXGW WenKai Mono` | zh-CN | 80 | Regular |
 | `LXGW WenKai Mono Light` | en | 50 | Light |
-| `霞鶩文楷等寬 Light` | zh-TW | 50 | Light |
-| `霞鹜文楷等宽 Light` | zh-CN | 50 | Light |
+| `LXGW WenKai Mono Light` | zh-TW | 50 | Light |
+| `LXGW WenKai Mono Light` | zh-CN | 50 | Light |
 | `LXGW WenKai Mono Medium` | en | 100 | Medium |
-| `霞鶩文楷等寬 Medium` | zh-TW | 100 | Medium |
-| `霞鹜文楷等宽 Medium` | zh-CN | 100 | Medium |
+| `LXGW WenKai Mono Medium` | zh-TW | 100 | Medium |
+| `LXGW WenKai Mono Medium` | zh-CN | 100 | Medium |
 
 There is no Bold weight; a bold request falls back to Medium.
 
@@ -74,28 +74,28 @@ Proportional family:
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
 | `LXGW WenKai TC` | en | 80 | Regular |
-| `霞鶩文楷 TC` | zh-TW | 80 | Regular |
-| `霞鹜文楷 TC` | zh-CN | 80 | Regular |
+| `LXGW WenKai TC` | zh-TW | 80 | Regular |
+| `LXGW WenKai TC` | zh-CN | 80 | Regular |
 | `LXGW WenKai TC Light` | en | 50 | Light |
-| `霞鶩文楷 TC Light` | zh-TW | 50 | Light |
-| `霞鹜文楷 TC Light` | zh-CN | 50 | Light |
+| `LXGW WenKai TC Light` | zh-TW | 50 | Light |
+| `LXGW WenKai TC Light` | zh-CN | 50 | Light |
 | `LXGW WenKai TC Medium` | en | 100 | Medium |
-| `霞鶩文楷 TC Medium` | zh-TW | 100 | Medium |
-| `霞鹜文楷 TC Medium` | zh-CN | 100 | Medium |
+| `LXGW WenKai TC Medium` | zh-TW | 100 | Medium |
+| `LXGW WenKai TC Medium` | zh-CN | 100 | Medium |
 
 Mono family:
 
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
 | `LXGW WenKai Mono TC` | en | 80 | Regular |
-| `霞鶩文楷等寬 TC` | zh-TW | 80 | Regular |
-| `霞鹜文楷等宽 TC` | zh-CN | 80 | Regular |
+| `LXGW WenKai Mono TC` | zh-TW | 80 | Regular |
+| `LXGW WenKai Mono TC` | zh-CN | 80 | Regular |
 | `LXGW WenKai Mono TC Light` | en | 50 | Light |
-| `霞鶩文楷等寬 TC Light` | zh-TW | 50 | Light |
-| `霞鹜文楷等宽 TC Light` | zh-CN | 50 | Light |
+| `LXGW WenKai Mono TC Light` | zh-TW | 50 | Light |
+| `LXGW WenKai Mono TC Light` | zh-CN | 50 | Light |
 | `LXGW WenKai Mono TC Medium` | en | 100 | Medium |
-| `霞鶩文楷等寬 TC Medium` | zh-TW | 100 | Medium |
-| `霞鹜文楷等宽 TC Medium` | zh-CN | 100 | Medium |
+| `LXGW WenKai Mono TC Medium` | zh-TW | 100 | Medium |
+| `LXGW WenKai Mono TC Medium` | zh-CN | 100 | Medium |
 
 There is no Bold weight; a bold request falls back to Medium.
 
@@ -137,30 +137,30 @@ Regional families: `PingFang SC` (苹方-简), `PingFang TC` (苹方-繁), `Ping
 
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
-| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
-| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
-| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
-| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
-| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
-| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
-| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
-| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
-| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
-| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
-| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
-| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
-| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
-| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
-| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
-| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
-| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
-| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
-| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
-| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
-| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
-| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
-| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
-| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
+| `PingFang SC` | en / zh-TW / zh-CN | 0 | Ultralight |
+| `PingFang SC` | en / zh-TW / zh-CN | 40 | Thin |
+| `PingFang SC` | en / zh-TW / zh-CN | 50 | Light |
+| `PingFang SC` | en / zh-TW / zh-CN | 80 | Regular |
+| `PingFang SC` | en / zh-TW / zh-CN | 100 | Medium |
+| `PingFang SC` | en / zh-TW / zh-CN | 180 | Semibold |
+| `PingFang TC` | en / zh-TW / zh-CN | 0 | Ultralight |
+| `PingFang TC` | en / zh-TW / zh-CN | 40 | Thin |
+| `PingFang TC` | en / zh-TW / zh-CN | 50 | Light |
+| `PingFang TC` | en / zh-TW / zh-CN | 80 | Regular |
+| `PingFang TC` | en / zh-TW / zh-CN | 100 | Medium |
+| `PingFang TC` | en / zh-TW / zh-CN | 180 | Semibold |
+| `PingFang HK` | en / zh-TW / zh-CN | 0 | Ultralight |
+| `PingFang HK` | en / zh-TW / zh-CN | 40 | Thin |
+| `PingFang HK` | en / zh-TW / zh-CN | 50 | Light |
+| `PingFang HK` | en / zh-TW / zh-CN | 80 | Regular |
+| `PingFang HK` | en / zh-TW / zh-CN | 100 | Medium |
+| `PingFang HK` | en / zh-TW / zh-CN | 180 | Semibold |
+| `PingFang MO` | en / zh-TW / zh-CN | 0 | Ultralight |
+| `PingFang MO` | en / zh-TW / zh-CN | 40 | Thin |
+| `PingFang MO` | en / zh-TW / zh-CN | 50 | Light |
+| `PingFang MO` | en / zh-TW / zh-CN | 80 | Regular |
+| `PingFang MO` | en / zh-TW / zh-CN | 100 | Medium |
+| `PingFang MO` | en / zh-TW / zh-CN | 180 | Semibold |
 
 </details>
 <details>
