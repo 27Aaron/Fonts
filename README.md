@@ -133,14 +133,34 @@ There is no Bold weight; a bold request falls back to Medium.
 - **Licence**: unfree
 - **Nix**: [`nix/pingfang.nix`](nix/pingfang.nix)
 
+Regional families: `PingFang SC` (苹方-简), `PingFang TC` (苹方-繁), `PingFang HK` (苹方-港), `PingFang MO` (苹方-澳).
+
 | Family | Language | Weight | Style |
 | --- | --- | --- | --- |
-| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 0 | Ultralight |
-| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 40 | Thin |
-| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 50 | Light |
-| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 80 | Regular |
-| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 100 | Medium |
-| `PingFang {SC,TC,HK,MO}` / `苹方-{简,繁,港,澳}` | en / zh-TW / zh-CN | 180 | Semibold |
+| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
+| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
+| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
+| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
+| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
+| `PingFang SC` / `苹方-简` / `蘋方-簡` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
+| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
+| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
+| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
+| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
+| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
+| `PingFang TC` / `苹方-繁` / `蘋方-繁` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
+| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
+| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
+| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
+| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
+| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
+| `PingFang HK` / `苹方-港` / `蘋方-港` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
+| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 0 | Ultralight / 极细体 / 極細體 |
+| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 40 | Thin / 纤细体 / 纖細體 |
+| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 50 | Light / 细体 / 細體 |
+| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 80 | Regular / 常规体 / 標準體 |
+| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 100 | Medium / 中黑体 / 中黑體 |
+| `PingFang MO` / `苹方-澳` / `蘋方-澳` | en / zh-TW / zh-CN | 180 | Semibold / 中粗体 / 中粗體 |
 
 </details>
 <details>
